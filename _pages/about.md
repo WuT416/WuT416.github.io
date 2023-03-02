@@ -1,9 +1,9 @@
 ---
-title: About
+title: 关于
 author: Tao He
 date: 2022-02-04
 category: Jekyll
 layout: post
 ---
 
-This is an about page.
+关于前端的一些知识整理博客
