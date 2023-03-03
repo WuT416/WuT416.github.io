@@ -5,3 +5,4 @@ permalink: /
 ---
 
 知识整理
+wut416.github.io/
