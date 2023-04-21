@@ -6,3 +6,6 @@ permalink: /
 
 知识整理
 wut416.github.io/
+
+jekyll主题
+https://github.com/sighingnow/jekyll-gitbook
