@@ -27,31 +27,8 @@
                     {% else %}
                         {% assign reversed_posts = site[collection.label] %}
                     {% endif %}
-                    <!-- {% for post in reversed_posts %}
-                        {% if page.url == post.url %}
-                        <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-                        {% else %}
-                        <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
-                        {% endif %}
-                            <a href="{{site.baseurl}}{{post.url}}">
-                                {{ post.title | escape }}
-                            </a>
-                            {% if site.toc.enabled %}
-                                {% if page.url == post.url %}
-                                    {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                                {% endif %}
-                            {% endif %}
-                        </li>
-                    {% endfor %} -->
+
                     {% for post in reversed_posts %}
-                    {% if post.categories != nil %}
-                      {% for category in post.categories %}
-                        {% if categories != category %}
-                          {% if categories != "" %}</li>{% endif %}
-                          <li class="category">
-                            <h2>{{category}}</h2>
-                            <ul>
-                        {% endif %}
                         {% if page.url == post.url %}
                         <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
                         {% else %}
@@ -66,12 +43,8 @@
                                 {% endif %}
                             {% endif %}
                         </li>
-                        {% endif %}
-                        {% assign categories = category %}
-                      {% endfor %}
-                    {% endif %}
-                  {% endfor %}
-                  {% if categories != "" %}</li>{% endif %}
+                    {% endfor %}
+
                     {% if reversed_posts.size > 0 %}
                         <li class="divider"></li>
                     {% endif %}
