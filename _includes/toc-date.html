@@ -18,22 +18,16 @@
             </li>
 
             <li class="divider"></li>
-
-            {% for collection in site.collections %}
-                <!-- <p>{{ collection.label }}</p> -->
-                {% if collection.output %}
-                    {% if collection.label == "posts" %}
-                        {% assign reversed_posts = site[collection.label] | reverse %}
-                    {% else %}
-                        {% assign reversed_posts = site[collection.label] %}
-                    {% endif %}
-
-                    {% for post in reversed_posts %}
-                        {% if page.url == post.url %}
-                        <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-                        {% else %}
-                        <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
-                        {% endif %}
+                {% assign categories = site.categories | sort %}
+                {% for category in categories %}
+                    <h2>{{ category | first }}</h2>
+                    <ul>
+                        {% for post in category.last %}
+                            {% if page.url == post.url %}
+                                <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                            {% else %}
+                                <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                            {% endif %}
                             <a href="{{site.baseurl}}{{post.url}}">
                                 {{ post.title | escape }}
                             </a>
@@ -42,15 +36,10 @@
                                     {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
                                 {% endif %}
                             {% endif %}
-                        </li>
-                    {% endfor %}
-
-                    {% if reversed_posts.size > 0 %}
-                        <li class="divider"></li>
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
-
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
             <li>
                 <a href="https://github.com/sighingnow/jekyll-gitbook/fork" target="blank" class="gitbook-link">
                     Fork it Now!

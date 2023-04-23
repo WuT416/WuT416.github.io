@@ -9,3 +9,6 @@ wut416.github.io/
 
 jekyll主题
 https://github.com/sighingnow/jekyll-gitbook
+
+本地调试
+运行：bundle exec jekyll serve
