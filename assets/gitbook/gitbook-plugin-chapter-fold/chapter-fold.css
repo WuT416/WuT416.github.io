@@ -26,11 +26,3 @@
 .book .book-summary .expanded > span .exc-trigger:before {
 	content: "\f107";
 }
-
-
-/** 自定义类 */
-.book .book-summary ul.summary .category {
-	padding: 0 15px;
-	font-weight: 700;
-    font-size: 18px;
-}
