@@ -29,7 +29,7 @@
 
 
 /** 自定义类 */
-.category {
+.book .book-summary ul.summary li.category {
 	padding: 0 15px;
 	font-weight: 700;
     font-size: 18px;
