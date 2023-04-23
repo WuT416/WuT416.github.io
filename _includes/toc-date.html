@@ -19,7 +19,7 @@
             <li class="divider"></li>
                 {% assign categories = site.categories | sort %}
                 {% for category in categories %}
-                    <li><h4>{{ category | first }}</h4></li>
+                    <li class="category">{{ category | first }}</li>
                     {% for post in category.last %}
                         {% if page.url == post.url %}
                             <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
@@ -37,6 +37,7 @@
                         </li>
                     {% endfor %}
                 {% endfor %}
+            <li class="divider"></li>
             <li>
                 <a href="https://github.com/sighingnow/jekyll-gitbook/fork" target="blank" class="gitbook-link">
                     Fork it Now!
