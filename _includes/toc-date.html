@@ -16,29 +16,26 @@
                     {{ site.title | escape }}
                 </a>
             </li>
-
             <li class="divider"></li>
                 {% assign categories = site.categories | sort %}
                 {% for category in categories %}
-                    <h2>{{ category | first }}</h2>
-                    <ul>
-                        {% for post in category.last %}
+                    <li><h4>{{ category | first }}</h4></li>
+                    {% for post in category.last %}
+                        {% if page.url == post.url %}
+                            <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                        {% else %}
+                            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                        {% endif %}
+                        <a href="{{site.baseurl}}{{post.url}}">
+                            {{ post.title | escape }}
+                        </a>
+                        {% if site.toc.enabled %}
                             {% if page.url == post.url %}
-                                <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-                            {% else %}
-                                <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                                {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
                             {% endif %}
-                            <a href="{{site.baseurl}}{{post.url}}">
-                                {{ post.title | escape }}
-                            </a>
-                            {% if site.toc.enabled %}
-                                {% if page.url == post.url %}
-                                    {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                                {% endif %}
-                            {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
+                        {% endif %}
+                        </li>
+                    {% endfor %}
                 {% endfor %}
             <li>
                 <a href="https://github.com/sighingnow/jekyll-gitbook/fork" target="blank" class="gitbook-link">
