@@ -439,9 +439,9 @@ console  也是一种隐患，同时也是容易被忽略的，我们之所以�
 
 
 
-github 仓库
-https://github.com/WuT416/JavaScript_summary
-参考文档：
-https://juejin.cn/post/6981588276356317214
-https://www.oschina.net/translate/\simple-guide-to-finding-a-javascript-memory-leak-in-node-js?print
-https://segmentfault.com/a/1190000039132414
+github 仓库   
+https://github.com/WuT416/JavaScript_summary  
+参考文档：  
+https://juejin.cn/post/6981588276356317214  
+https://www.oschina.net/translate/\simple-guide-to-finding-a-javascript-memory-leak-in-node-js?print  
+https://segmentfault.com/a/1190000039132414  
